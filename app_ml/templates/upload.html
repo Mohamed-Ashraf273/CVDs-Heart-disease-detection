@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Upload and Predict</title>
+    <!-- To be honest, I didn't write this CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Make a Prediction</h1>
+        <form action="/predict" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" name="age" id="age">
+            </div>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select name="sex" id="sex">
+                    <option value="M">M</option>
+                    <option value="F">F</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="chestPainType">Chest Pain Type:</label>
+                <select name="chestPainType" id="chestPainType">
+                    <option value="ASY">ASY</option>
+                    <option value="NAP">NAP</option>
+                    <option value="TA">TA</option>
+                    <option value="ATA">ATA</option>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="restingBP">Resting Blood Pressure:</label>
+                <input type="text" name="restingBP" id="restingBP">
+            </div>
+            <div class="form-group">
+                <label for="cholesterol">Cholesterol:</label>
+                <input type="text" name="cholesterol" id="cholesterol">
+            </div>
+            <div class="form-group">
+                <label for="fastingBS">Fasting Blood Sugar:</label>
+                <input type="text" name="fastingBS" id="fastingBS">
+            </div>
+            <div class="form-group">
+                <label for="restingECG">Resting ECG:</label>
+                <select name="restingECG" id="restingECG">
+                    <option value="Normal">Normal</option>
+                    <option value="ST">ST</option>
+                    <option value="LVH">LVH</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="maxHR">Maximum Heart Rate:</label>
+                <input type="text" name="maxHR" id="maxHR">
+            </div>
+            <div class="form-group">
+                <label for="exerciseAngina">Exercise Angina:</label>
+                <select name="exerciseAngina" id="exerciseAngina">
+                    <option value="Y">Y</option>
+                    <option value="N">N</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="oldpeak">Oldpeak:</label>
+                <input type="text" name="oldpeak" id="oldpeak">
+            </div>
+            <div class="form-group">
+                <label for="stSlope">ST Slope:</label>
+                <select name="stSlope" id="stSlope">
+                    <option value="Down">Down</option>
+                    <option value="Up">Up</option>
+                    <option value="Flat">Flat</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="algorithm">Choose Algorithm:</label>
+                <select name="algorithm" id="algorithm">
+                    <option value="KNN">KNN</option>
+                    <option value="ML">ML</option>
+                    <option value="DL">DL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Predict</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
